@@ -1,114 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="monetag" content="3c1d9e74c39d07d4bdf83fd0e66b8246">
-</head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(180deg, #0a0a0a, #1a1a1a);
-      font-family: 'Inter', sans-serif;
-      color: #fff;
+      background: #0a0a0a; /* Dark background */
+      font-family: 'Poppins', sans-serif;
+      color: #e0e0e0;
       overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.5;
     }
     h1 {
-      font-size: 42px;
+      font-size: 36px;
       text-align: center;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff, #8b00ff);
+      color: #fff;
+      margin: 20px 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff6f61, #ffd700);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin: 25px 0;
-      text-shadow: 0 2px 8px rgba(0, 247, 255, 0.5);
-      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
     }
     .main-content {
-      padding: 15px;
+      padding: 20px;
       margin: 0 auto;
       max-width: 1200px;
+      background: linear-gradient(135deg, #121212, #1c1c1c); /* Dark gradient */
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Dark shadow */
+      border: 1px solid rgba(255, 215, 0, 0.1);
     }
     .section {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(15px);
-      border-radius: 12px;
+      background: rgba(20, 20, 20, 0.8); /* Dark section background */
+      border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Dark shadow */
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      transition: transform 0.2s ease;
     }
     .section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.2);
     }
     .search-filter {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
+      flex-direction: column;
+      gap: 15px;
       margin-bottom: 15px;
     }
     .search-bar {
-      width: 100%;
       position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
     }
     input {
-      padding: 14px 50px;
-      border-radius: 25px;
-      border: 3px solid;
-      border-image: linear-gradient(45deg, #00f7ff, #ff00ff) 1;
-      background: linear-gradient(135deg, #1c2526, #2a3439);
-      color: #fff;
+      padding: 10px 40px;
+      border-radius: 8px;
+      border: 1px solid #333; /* Dark border */
+      background: #151515; /* Dark input background */
+      color: #e0e0e0;
       font-size: 16px;
       width: 100%;
-      box-shadow: inset 0 0 8px rgba(0, 247, 255, 0.3);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
     input:focus {
       outline: none;
-      border-image: linear-gradient(45deg, #ffd700, #ff8c00) 1;
-      background: #2a2a2a;
-      box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.5), 0 4px 15px rgba(255, 204, 0, 0.7);
-      transform: scale(1.02);
+      border-color: #ffd700;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
     input::placeholder {
-      color: #aaa;
-      transition: opacity 0.3s ease;
-    }
-    input:focus::placeholder {
-      opacity: 0;
+      color: #888; /* Darker placeholder */
     }
     .search-icon {
       position: absolute;
-      left: 15px;
+      left: 10px;
       top: 50%;
       transform: translateY(-50%);
-      width: 24px;
-      height: 24px;
-      fill: #ffcc00;
-      opacity: 0.9;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      width: 20px;
+      height: 20px;
+      fill: #ffd700;
     }
     input:focus + .search-icon {
-      opacity: 1;
-      transform: translateY(-50%) scale(1.1);
+      fill: #ffca28;
     }
     .clear-search {
       position: absolute;
-      right: 15px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
-      background: #ff5722;
+      background: #d32f2f;
       border: none;
       border-radius: 50%;
-      width: 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       color: #fff;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
       display: none;
       align-items: center;
@@ -117,262 +113,377 @@
     input:not(:placeholder-shown) + .search-icon + .clear-search {
       display: flex;
     }
-    .category-title {
-      font-size: 24px;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 15px 0;
-      font-weight: 700;
-      text-shadow: 0 2px 5px rgba(0, 247, 255, 0.4);
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .category-filter button {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid #ffd700;
+      border-radius: 5px;
+      padding: 8px 15px;
+      color: #ffd700;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .category-filter button:hover {
+      background: #ffd700;
+      color: #1a1a1a;
+    }
+    .category-filter button.active {
+      background: #ffd700;
+      color: #1a1a1a;
     }
     .content-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 15px;
-      overflow-x: auto;
-      padding: 0 5px 20px;
-      -webkit-overflow-scrolling: touch;
-    }
-    .content-grid.full-view {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding: 20px;
-      overflow-y: auto;
-      animation: fadeInGrid 0.5s ease-in;
-    }
-    @keyframes fadeInGrid {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .content-grid::-webkit-scrollbar {
-      height: 8px;
-    }
-    .content-grid::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #00f7ff, #ff00ff);
-      border-radius: 8px;
+      grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns per line */
+      gap: 15px; /* Adjusted gap */
+      padding: 15px;
+      justify-content: center;
     }
     .card {
-      background: rgba(0, 0, 0, 0.9);
-      border-radius: 12px;
+      background: rgba(25, 25, 25, 0.8); /* Dark card background */
+      border-radius: 8px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: transform 0.2s ease;
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      min-width: 180px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* Dark shadow */
+      min-width: 0; /* Allow flexibility */
+      position: relative; /* For positioning quality badge */
     }
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
     }
     .card img {
       width: 100%;
-      height: 100%;
+      height: 200px; /* Kept at 200px */
       object-fit: cover;
-      border-radius: 12px 12px 0 0;
-      border: 1px solid;
-      border-image: linear-gradient(to right, #00f7ff, #ff00ff) 1;
+      border-radius: 6px 6px 0 0;
+      border: 1px solid #2a2a2a; /* Darker border */
       transition: transform 0.3s ease;
     }
-    .card:hover img { transform: scale(1.1); }
+    .card:hover img {
+      transform: scale(1.05);
+    }
     .card-title {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 8px;
-      font-size: 14px;
+      color: #ffd700;
+      padding: 8px; /* Reduced padding */
+      font-size: 14px; /* Reduced font size */
       font-weight: 600;
       text-align: center;
-      opacity: 0;
-      transform: translateY(100%);
-      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .card:hover .card-title {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    .popularity-score {
+      color: #ffca28; /* Gold-like color for stars */
+      font-size: 12px;
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+    .popularity-score .star {
+      color: #ffca28;
     }
     .quality-badge {
       position: absolute;
-      top: 3px;
-      right: 5px;
-      background: linear-gradient(45deg, #ff6f00, #ff0000);
+      top: 0px; /* Upper corner */
+      right: 0px; /* Right side */
+      background: linear-gradient(45deg, #ff6f61, #d81b60);
       color: #fff;
-      padding: 5px 5px;
-      border-radius: 5px;
-      font-size: 5px;
-      font-weight: 700;
+      padding: 2px 6px; /* Reduced padding */
+      border-radius: 3px; /* Smaller radius */
+      font-size: 10px; /* Reduced font size */
+      font-weight: 600;
       text-transform: uppercase;
-      border: 1px solid #ffd700;
-      box-shadow: 0 2px 10px rgba(255, 111, 0, 0.7), 0 0 15px rgba(255, 0, 0, 0.5);
-      animation: pulseBadge 1.5s ease-in-out infinite;
     }
-    @keyframes pulseBadge {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-    .more-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      color: #fff;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 247, 255, 0.3);
-    }
-    .more-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.5);
-    }
-    .more-btn.loading {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-    .details {
-      display: none;
-      background: #000000;
-      border: 1px solid rgba(0, 247, 255, 0.2);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0 0;
-      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.3);
-      animation: fadeIn 0.3s ease-in;
-    }
-    .back-btn {
-      background: linear-gradient(45deg, #ff5722, #ffcc00);
-      color: #fff;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-    .back-btn:hover {
-      transform: scale(1.05);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .details h3 {
-      color: #ffd700;
-      font-size: 22px;
-      margin-bottom: 15px;
-      font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    .details p {
-      margin: 10px 0;
-      font-size: 14px;
-      color: #e0e0e0;
-    }
-    .server-section, .download-section {
-      background: #333333;
-      padding: 12px;
-      border-radius: 10px;
-      margin: 8px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-      color: #fff;
-    }
-    .server-section:hover, .download-section:hover {
-      background: #4e4e4e;
-      transform: translateY(-2px);
-    }
-    .server-section span, .download-section span {
-      color: #fff;
-      font-weight: 600;
-    }
-    .play-btn {
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
-    .download-btn {
-      background: #ff5722;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 10px;
-      transition: transform 0.3s ease;
-    }
-    .server-section:hover .play-btn, .download-section:hover .download-btn {
-      transform: scale(1.2);
-    }
-    hr { border-color: rgba(255, 255, 255, 0.2); margin: 15px 0; }
-    .no-content, .loading {
-      text-align: center;
-      color: #999;
-      font-size: 14px;
-      margin: 20px 0;
+    .card:hover .quality-badge {
+      transform: scale(1.1);
     }
     .loader {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #00f7ff;
-      border-right: 4px solid #ff00ff;
+      border: 2px solid #2a2a2a; /* Darker loader border */
+      border-top: 4px solid #ffd700;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       animation: spin 1s linear infinite;
-      margin: 20px auto;
+      margin: 15px auto;
     }
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    .skeleton {
+      background: linear-gradient(90deg, #121212 25%, #1c1c1c 50%, #121212 75%); /* Dark skeleton gradient */
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 8px;
+      height: 200px; /* Matches grid view image height */
+      min-width: 0; /* Allow flexibility */
+    }
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .details-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95); /* Dark modal background */
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .details-modal-content {
+      background: #1a1a1a; /* Dark modal content */
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 90%;
+      width: 400px;
+      max-height: 80vh; /* Set maximum height to enable scrolling */
+      overflow-y: auto; /* Enable vertical scrolling */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Dark shadow */
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #d32f2f;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .back-button {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background: #ff4500;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .title {
+      color: #ffd700;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .premium-badge {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background: #ff9800;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .details {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .poster {
+      flex: 0 0 120px;
+    }
+    .poster img {
+      width: 100%;
+      height: 150px; /* Reduced height */
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .info {
+      flex: 1;
+    }
+    .info .type {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info .type span {
+      color: #ffd700;
+    }
+    .info .description {
+      background: rgba(0, 255, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px;
+      color: #00ff00;
+      font-size: 12px;
+    }
+    .info .last-updated {
+      color: #4fc3f7;
+      font-size: 10px;
+      margin-top: 5px;
+    }
+    .popularity {
+      background: #ffca28;
+      border-radius: 5px;
+      padding: 8px 15px;
+      color: #121212;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .popularity .star {
+      color: #ffd700;
+    }
+    .server-block {
+      margin-top: 10px;
+    }
+    .server {
+      background: #252525;
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+    .server span {
+      color: #fff;
+      font-size: 14px;
+      flex: 1;
+    }
+    .stream-btn, .download-btn {
+      background: linear-gradient(45deg, #4a90e2, #50e3c2);
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none; /* Remove underline */
+    }
+    .stream-btn:hover {
+      background: #357abd;
+    }
+    .download-btn {
+      background: linear-gradient(45deg, #e84949, #ff6f61);
+    }
+    .download-btn:hover {
+      background: #c0392b;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95); /* Dark modal background */
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #1a1a1a; /* Dark modal content */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      max-width: 90%;
+      width: 400px;
+    }
+    .modal-content iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+    .timer {
+      color: #ce93d8;
+      font-size: 10px;
+      margin: 5px 0;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .nav-btn {
+      background: #0288d1;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .nav-btn:hover {
+      background: #01579b;
+    }
+    .nav-btn:disabled {
+      background: #444; /* Darker disabled button */
+      cursor: not-allowed;
+    }
+    .page-indicator {
+      color: #ff7043;
+      font-size: 12px;
+      padding: 5px;
+    }
     @media (max-width: 768px) {
-      h1 { font-size: 32px; margin: 20px 0; }
+      h1 { font-size: 24px; margin: 15px 0; }
       .main-content { padding: 10px; }
-      .section { padding: 15px; margin: 15px 0; }
-      .search-filter { gap: 8px; }
-      input { padding: 12px 45px; font-size: 14px; }
-      .search-icon, .clear-search { width: 20px; height: 20px; }
-      .category-title { font-size: 20px; margin: 10px 0; }
-      .content-grid { gap: 12px; padding: 0 5px 15px; }
-      .card { min-width: 140px; }
-      .card img { height: 210px; }
-      .content-grid.full-view { 
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 15px;
-        padding: 15px;
+      .section { padding: 10px; margin-bottom: 10px; }
+      input { padding: 6px 25px; font-size: 12px; }
+      .search-icon { width: 15px; height: 15px; }
+      .clear-search { width: 20px; height: 20px; font-size: 12px; }
+      .category-filter button { padding: 5px 10px; font-size: 10px; }
+      .content-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+        gap: 10px;
+        padding: 10px;
       }
-      .details { padding: 15px; margin: 15px 0 0; }
-      .details h3 { font-size: 18px; }
-      .details p { font-size: 12px; }
-      .server-section, .download-section { padding: 10px; margin: 6px 0; }
-      .play-btn, .download-btn { width: 24px; height: 24px; }
-      .loader { width: 32px; height: 32px; }
-      .more-btn { padding: 6px 12px; font-size: 14px; top: 10px; right: 10px; }
-      .back-btn { padding: 6px 12px; font-size: 12px; }
+      .card { min-width: 0; }
+      .card img { height: 150px; } /* Kept at 150px for mobile */
+      .card-title { font-size: 10px; padding: 5px; }
+      .popularity-score { font-size: 10px; gap: 1px; }
+      .quality-badge { font-size: 6px; padding: 2px 2px; }
+      .details-modal-content { width: 90%; padding: 10px; max-height: 80vh; overflow-y: auto; }
+      .details { flex-direction: column; align-items: center; gap: 5px; }
+      .poster { max-width: 80px; }
+      .poster img { height: 120px; } /* Reduced height */
+      .info .type { font-size: 12px; }
+      .info .description { font-size: 10px; padding: 5px; }
+      .info .last-updated { font-size: 10px; }
+      .server { padding: 5px; gap: 5px; }
+      .server span { font-size: 12px; }
+      .stream-btn, .download-btn { font-size: 10px; padding: 5px 10px; gap: 4px; text-decoration: none; /* Remove underline on mobile */ }
+      .popularity { font-size: 12px; padding: 6px 10px; gap: 3px; }
+      .nav-btn { padding: 6px 10px; font-size: 10px; }
+      .page-indicator { font-size: 10px; }
     }
   </style>
 </head>
 <body>
   <div class="main-content">
+    
     <div class="section">
       <div class="search-filter">
         <div class="search-bar">
@@ -382,50 +493,59 @@
           </svg>
           <button class="clear-search" onclick="clearSearch()" aria-label="Clear search">✕</button>
         </div>
+        <div class="category-filter">
+          <button onclick="filterByCategory('All')" class="active">All</button>
+          <button onclick="filterByCategory('Bollywood')">Bollywood</button>
+          <button onclick="filterByCategory('Hollywood')">Hollywood</button>
+          <button onclick="filterByCategory('South')">Regional</button>
+          <button onclick="filterByCategory('Web Series')">Web Series</button>
+          <button onclick="filterByCategory('Adult Content')">Adult Content</button>
+          <button onclick="filterByCategory('Anime')">Anime</button>
+          <button onclick="filterByCategory('TV Serials')">TV Serials</button>
+        </div>
       </div>
-      <div id="searchResults" class="content-grid"><div class="loader"></div></div>
-      <div id="contentDetails" class="details"></div>
+      <div id="searchResults" class="content-grid">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+      <div class="nav-buttons">
+        <button class="nav-btn" onclick="navigatePage(-1)" id="prevBtn" disabled>Previous</button>
+        <span class="page-indicator" id="pageIndicator">Page 1</span>
+        <button class="nav-btn" onclick="navigatePage(1)" id="nextBtn">Next</button>
+      </div>
     </div>
-
-    <div class="section" id="bollywoodSection">
-      <h2 class="category-title">Bollywood</h2>
-      <button class="more-btn" onclick="showMore('bollywoodContent')" aria-label="Show more Bollywood content">More</button>
-      <div id="bollywoodContent" class="content-grid"><div class="loader"></div></div>
+    <div id="detailsModal" class="details-modal">
+      <button class="close-btn" onclick="resetToHomepage()" aria-label="Close">×</button>
+      <div class="details-modal-content">
+        <div class="details-content">
+          <!-- Content will be dynamically inserted -->
+        </div>
+      </div>
     </div>
-    <div class="section" id="hollywoodSection">
-      <h2 class="category-title">Hollywood</h2>
-      <button class="more-btn" onclick="showMore('hollywoodContent')" aria-label="Show more Hollywood content">More</button>
-      <div id="hollywoodContent" class="content-grid"><div class="loader"></div></div>
-    </div>
-    <div class="section" id="southSection">
-      <h2 class="category-title">South</h2>
-      <button class="more-btn" onclick="showMore('southContent')" aria-label="Show more South content">More</button>
-      <div id="southContent" class="content-grid"><div class="loader"></div></div>
-    </div>
-    <div class="section" id="webSeriesSection">
-      <h2 class="category-title">Web Series</h2>
-      <button class="more-btn" onclick="showMore('webSeriesContent')" aria-label="Show more Web Series content">More</button>
-      <div id="webSeriesContent" class="content-grid"><div class="loader"></div></div>
-    </div>
-    <div class="section" id="adultContentSection">
-      <h2 class="category-title">Adult Content</h2>
-      <button class="more-btn" onclick="showMore('adultContent')" aria-label="Show more Adult Content">More</button>
-      <div id="adultContent" class="content-grid"><div class="loader"></div></div>
-    </div>
-    <div class="section" id="animeSection">
-      <h2 class="category-title">Anime</h2>
-      <button class="more-btn" onclick="showMore('animeContent')" aria-label="Show more Anime content">More</button>
-      <div id="animeContent" class="content-grid"><div class="loader"></div></div>
-    </div>
-    <div class="section" id="tvSerialsSection">
-      <h2 class="category-title">TV Serials</h2>
-      <button class="more-btn" onclick="showMore('tvSerialsContent')" aria-label="Show more TV Serials content">More</button>
-      <div id="tvSerialsContent" class="content-grid"><div class="loader"></div></div>
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <iframe id="ytPlayer" src="https://www.youtube.com/embed/dJLEqkzHwvM?enablejsapi=1" allow="autoplay; encrypted-media"></iframe>
+        <div class="timer" id="timer">Please watch the video for 120 seconds</div>
+      </div>
     </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <script>
     const firebaseConfig = {
@@ -440,30 +560,155 @@
 
     try {
       firebase.initializeApp(firebaseConfig);
-      console.log("Firebase initialized successfully at 11:31 PM IST, Monday, September 08, 2025");
+      console.log("Firebase initialized successfully at 06:55 PM IST, Saturday, October 04, 2025");
     } catch (error) {
-      console.error("Firebase initialization failed at 11:31 PM IST, Monday, September 08, 2025:", error);
+      console.error("Firebase initialization failed at 06:55 PM IST, Saturday, October 04, 2025:", error);
       alert("❌ Failed to connect to Firebase. Check configuration or network.");
       document.getElementById("searchResults").innerHTML = '<p class="no-content">Failed to connect to Firebase</p>';
     }
 
     const db = firebase.firestore();
     let allContent = [];
-    let contentMap = new Map(); // Store content by ID for quick lookup
+    let contentMap = new Map();
     let isDetailsView = false;
+    let currentCategory = 'All';
+    let player;
+    let timerInterval;
+    let secondsWatched = 0;
+    let selectedContentId = null;
+    let currentPage = 0;
+    const postsPerPage = 15; // 15 posters per page
+    const REQUIRED_SECONDS = 0;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytPlayer', {
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+      console.log('YouTube API ready – player created at 06:55 PM IST, Saturday, October 04, 2025');
+    }
+
+    function onPlayerReady(event) {
+      console.log('Player ready – attaching onStateChange listener at 06:55 PM IST, Saturday, October 04, 2025');
+      player.addEventListener('onStateChange', onPlayerStateChange);
+    }
+
+    function onPlayerStateChange(event) {
+      console.log('State change event fired at 06:55 PM IST, Saturday, October 04, 2025:', event.data);
+      if (event.data === YT.PlayerState.PLAYING) {
+        console.log('Video playing – starting timer at 06:55 PM IST, Saturday, October 04, 2025');
+        startTimer();
+      } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        console.log('Video paused/ended – stopping timer at 06:55 PM IST, Saturday, October 04, 2025');
+        stopTimer();
+      }
+    }
+
+    function startTimer() {
+      if (!timerInterval) {
+        secondsWatched = 0;
+        timerInterval = setInterval(() => {
+          secondsWatched++;
+          const remaining = REQUIRED_SECONDS - secondsWatched;
+          document.getElementById('timer').textContent = `Please watch the video for ${remaining} seconds`;
+          console.log(`Timer tick at 06:55 PM IST, Saturday, October 04, 2025: ${secondsWatched}/${REQUIRED_SECONDS} seconds`);
+          if (secondsWatched >= REQUIRED_SECONDS) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            document.getElementById('timer').textContent = 'Proceeding to content...';
+            console.log('Timer complete – proceeding to details at 06:55 PM IST, Saturday, October 04, 2025');
+            setTimeout(proceedToDetails, 500);
+          }
+        }, 1000);
+      }
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        console.log('Timer stopped at 06:55 PM IST, Saturday, October 04, 2025');
+      }
+    }
+
+    function showVideoModal(id) {
+      incrementPopularity(id);
+      selectedContentId = id;
+      secondsWatched = 0;
+      document.getElementById('timer').textContent = `Please watch the video for ${REQUIRED_SECONDS} seconds`;
+      document.getElementById('videoModal').style.display = 'flex';
+      if (player && player.playVideo) {
+        player.playVideo();
+        console.log('Video play triggered at 06:55 PM IST, Saturday, October 04, 2025');
+      } else {
+        console.error('Player not ready – cannot play video at 06:55 PM IST, Saturday, October 04, 2025');
+      }
+    }
+
+    function incrementPopularity(id) {
+      const contentRef = db.collection("content").doc(id);
+      contentRef.get().then(doc => {
+        if (doc.exists) {
+          const currentPopularity = doc.data().popularity || 0;
+          const newPopularity = Math.min(currentPopularity + 1, 5); // Cap at 5 stars
+          contentRef.update({ popularity: newPopularity })
+            .then(() => {
+              console.log(`Popularity incremented to ${newPopularity} for ID ${id} at 06:55 PM IST, Saturday, October 04, 2025`);
+              // Update local content map
+              const content = contentMap.get(id);
+              if (content) {
+                content.popularity = newPopularity;
+                contentMap.set(id, content);
+                liveSearch(); // Refresh the grid to show updated popularity
+              }
+            })
+            .catch(error => {
+              console.error("Error updating popularity at 06:55 PM IST, Saturday, October 04, 2025:", error);
+            });
+        }
+      }).catch(error => {
+        console.error("Error fetching document for popularity update at 06:55 PM IST, Saturday, October 04, 2025:", error);
+      });
+    }
+
+    function proceedToDetails() {
+      document.getElementById('videoModal').style.display = 'none';
+      if (player && player.stopVideo) {
+        player.stopVideo();
+      }
+      stopTimer();
+      showDetailsById(selectedContentId);
+    }
 
     function isValidUrl(url) {
       try {
         new URL(url);
         return true;
       } catch (e) {
-        console.warn("Invalid URL detected at 11:31 PM IST, Monday, September 08, 2025:", url);
+        console.warn("Invalid URL detected at 06:55 PM IST, Saturday, October 04, 2025:", url);
         return false;
       }
     }
 
     function loadAllContent() {
-      document.getElementById("searchResults").innerHTML = '<div class="loader"></div>';
+      document.getElementById("searchResults").innerHTML = `
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      `;
       db.collection("content").get()
         .then(snapshot => {
           allContent = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
@@ -472,18 +717,22 @@
               const dateB = b.updatedAt ? new Date(b.updatedAt) : new Date();
               return dateB - dateA;
             });
-          // Populate contentMap for quick lookup
           allContent.forEach(item => contentMap.set(item.id, item));
-          console.log("All content loaded (sorted by latest) at 11:31 PM IST, Monday, September 08, 2025:", allContent);
+          console.log("All content loaded (sorted by latest) at 06:55 PM IST, Saturday, October 04, 2025:", allContent);
           if (allContent.length === 0) {
             document.getElementById("searchResults").innerHTML = '<p class="no-content">No content available</p>';
+            document.getElementById("prevBtn").disabled = true;
+            document.getElementById("nextBtn").disabled = true;
+            document.getElementById("pageIndicator").textContent = 'Page 1';
           }
-          loadCategoryContent();
           liveSearch();
         })
         .catch(error => {
-          console.error("Error loading content at 11:31 PM IST, Monday, September 08, 2025:", error);
+          console.error("Error loading content at 06:55 PM IST, Saturday, October 04, 2025:", error);
           document.getElementById("searchResults").innerHTML = '<p class="no-content">Error fetching content: ' + error.message + '</p>';
+          document.getElementById("prevBtn").disabled = true;
+          document.getElementById("nextBtn").disabled = true;
+          document.getElementById("pageIndicator").textContent = 'Page 1';
           alert("❌ Error fetching data: " + error.message);
           if (error.code === 'permission-denied') {
             alert("⚠️ Check Firestore rules: Set to 'allow read: if true;' for testing.");
@@ -491,44 +740,17 @@
         });
     }
 
-    function loadCategoryContent() {
-      const categories = {
-        Bollywood: document.getElementById("bollywoodContent"),
-        Hollywood: document.getElementById("hollywoodContent"),
-        South: document.getElementById("southContent"),
-        "Web Series": document.getElementById("webSeriesContent"),
-        "Adult Content": document.getElementById("adultContent"),
-        Anime: document.getElementById("animeContent"),
-        "TV Serials": document.getElementById("tvSerialsContent")
-      };
-
-      Object.keys(categories).forEach(category => {
-        const container = categories[category];
-        container.classList.remove('full-view');
-        const filteredContent = allContent.filter(item => item.category === category && item.title).slice(0, 5);
-        if (filteredContent.length === 0) {
-          container.innerHTML = '<p class="no-content">No content available</p>';
-        } else {
-          container.innerHTML = filteredContent.map(item => `
-            <div class="card" onclick="showDetailsById('${item.id}')" aria-label="${item.title}">
-              <div class="quality-badge">${item.quality || 'HD'}</div>
-              <img src="${item.poster || 'https://via.placeholder.com/350x270'}" alt="${item.title} poster" />
-              <div class="card-title">${item.title}</div>
-            </div>`).join('');
-        }
-      });
-    }
-
     function resetToHomepage() {
       isDetailsView = false;
-      document.getElementById("contentDetails").style.display = 'none';
-      document.getElementById("contentDetails").innerHTML = '';
+      document.getElementById("detailsModal").style.display = 'none';
       document.getElementById("searchTitle").value = '';
-      loadCategoryContent();
+      currentCategory = 'All';
+      currentPage = 0;
+      updateCategoryButtons();
       liveSearch();
       history.replaceState({ view: 'home' }, '', '');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      console.log("Reset to homepage at 11:31 PM IST, Monday, September 08, 2025");
+      console.log("Reset to homepage at 06:55 PM IST, Saturday, October 04, 2025");
     }
 
     function liveSearch() {
@@ -536,40 +758,76 @@
       const searchResults = document.getElementById("searchResults");
       const clearButton = document.querySelector('.clear-search');
       clearButton.style.display = keyword ? 'flex' : 'none';
-      const filteredContent = allContent.filter(item => 
+      let filteredContent = allContent.filter(item => 
         item.title && item.title.toLowerCase().includes(keyword)
       );
-
-      if (filteredContent.length === 0) {
+      if (currentCategory !== 'All') {
+        filteredContent = filteredContent.filter(item => item.category === currentCategory);
+      }
+      const totalPages = Math.ceil(filteredContent.length / postsPerPage);
+      document.getElementById("prevBtn").disabled = currentPage <= 0;
+      document.getElementById("nextBtn").disabled = currentPage >= totalPages - 1;
+      document.getElementById("pageIndicator").textContent = `Page ${currentPage + 1}${totalPages > 0 ? ` of ${totalPages}` : ''}`;
+      const startIndex = currentPage * postsPerPage;
+      const paginatedContent = filteredContent.slice(startIndex, startIndex + postsPerPage);
+      if (paginatedContent.length === 0) {
         searchResults.innerHTML = '<p class="no-content">No content found</p>';
+        document.getElementById("prevBtn").disabled = true;
+        document.getElementById("nextBtn").disabled = true;
+        document.getElementById("pageIndicator").textContent = 'Page 1';
       } else {
-        searchResults.innerHTML = filteredContent.map(item => `
-          <div class="card" onclick="showDetailsById('${item.id}')" aria-label="${item.title}">
+        searchResults.innerHTML = paginatedContent.map(item => `
+          <div class="card" onclick="showVideoModal('${item.id}')" aria-label="${item.title}">
             <div class="quality-badge">${item.quality || 'HD'}</div>
-            <img src="${item.poster || 'https://via.placeholder.com/350x270'}" alt="${item.title} poster" />
+            <img src="${item.poster || 'https://via.placeholder.com/200x300'}" alt="${item.title} poster" loading="lazy" />
             <div class="card-title">${item.title}</div>
+            <div class="popularity-score">
+              ${'★'.repeat(item.popularity || 0)}${'☆'.repeat(5 - (item.popularity || 0))}
+            </div>
           </div>`).join('');
       }
     }
 
+    function navigatePage(direction) {
+      currentPage += direction;
+      liveSearch();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function clearSearch() {
       document.getElementById("searchTitle").value = '';
+      currentPage = 0;
       liveSearch();
+    }
+
+    function filterByCategory(category) {
+      currentCategory = category;
+      currentPage = 0;
+      updateCategoryButtons();
+      liveSearch();
+      console.log(`Filtered by category: ${category} at 06:55 PM IST, Saturday, October 04, 2025`);
+    }
+
+    function updateCategoryButtons() {
+      const buttons = document.querySelectorAll('.category-filter button');
+      buttons.forEach(button => {
+        button.classList.toggle('active', button.textContent === currentCategory);
+      });
     }
 
     function showDetailsById(id) {
       const data = contentMap.get(id);
       if (!data || !data.id || !data.title) {
-        console.error("Invalid or missing post data for ID at 11:31 PM IST, Monday, September 08, 2025:", id);
-        document.getElementById("contentDetails").innerHTML = '<p class="no-content">Error: Invalid or missing post data</p>';
+        console.error("Invalid or missing post data for ID at 06:55 PM IST, Saturday, October 04, 2025:", id);
+        document.getElementById("detailsModal").innerHTML = '<p class="no-content">Error: Invalid or missing post data</p>';
         return;
       }
 
-      const detailsContainer = document.getElementById("contentDetails");
+      const detailsContainer = document.getElementById("detailsModal").querySelector('.details-content');
       const currentDateTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", hour12: true });
+      const isPremium = data.premium || false;
 
       try {
-        // Sort episodes by updatedAt in descending order (latest first)
         const sortedEpisodes = data.type === "series" && data.episodes && Array.isArray(data.episodes) 
           ? [...data.episodes].sort((a, b) => {
               const dateA = a.updatedAt ? new Date(a.updatedAt) : new Date(0);
@@ -581,121 +839,74 @@
             })
           : [];
 
-        console.log(`Rendering details for ${data.title} with sorted episodes at 11:31 PM IST, Monday, September 08, 2025:`, sortedEpisodes);
+        console.log(`Rendering details for ${data.title} with sorted episodes at 06:55 PM IST, Saturday, October 04, 2025:`, sortedEpisodes);
 
         detailsContainer.innerHTML = `
-          <button class="back-btn" onclick="resetToHomepage()" aria-label="Back to homepage">Back to Home</button>
-          <h3>${data.title}</h3>
-          <p><strong>Description:</strong> ${data.description || "No description available"}</p>
-          <p><strong>Quality:</strong> ${data.quality || "N/A"}</p>
-          <p><strong>Category:</strong> ${data.category || "N/A"}</p>
-          <p><strong>Type:</strong> ${data.type === "movie" ? "Movie" : "Web Series"}</p>
-          <p><strong>Last Updated:</strong> ${data.updatedAt ? new Date(data.updatedAt).toLocaleString("en-US", { timeZone: "Asia/Kolkata", hour12: true }) : currentDateTime}</p>
-          ${data.imdbId ? `<p><strong>IMDb:</strong> <a href="https://www.imdb.com/title/${data.imdbId}" target="_blank" rel="noopener noreferrer">${data.imdbId}</a></p>` : ""}
-          ${data.type === "movie" && data.servers && Array.isArray(data.servers) && data.servers.length ? `
-            <h4>Servers</h4>
-            ${data.servers[0].streaming && isValidUrl(data.servers[0].streaming) ? `
-              <a href="${data.servers[0].streaming}" target="_blank" rel="noopener noreferrer" class="server-section" aria-label="Stream ${data.title}">
-                <span>Streaming - ${data.servers[0].quality ? `Server 1 (${data.servers[0].quality})` : 'Server 1'}</span>
-                <div class="play-btn">▶</div>
-              </a>
-            ` : `<div class="server-section"><span>No streaming link available</span></div>`}
-            ${data.servers[0].download && isValidUrl(data.servers[0].download) ? `
-              <a href="${data.servers[0].download}" target="_blank" rel="noopener noreferrer" class="download-section" download aria-label="Download ${data.title}">
-                <span>Download - ${data.servers[0].quality ? `Server 1 (${data.servers[0].quality})` : 'Server 1'}</span>
-                <div class="download-btn">↓</div>
-              </a>
-            ` : `<div class="download-section"><span>No download link available</span></div>`}
-            ${data.servers.slice(1).map((s, index) => `
-              ${s.streaming && isValidUrl(s.streaming) ? `
-                <a href="${s.streaming}" target="_blank" rel="noopener noreferrer" class="server-section" aria-label="Stream ${data.title} server ${index + 2}">
-                  <span>Streaming - ${s.quality ? `Server ${index + 2} (${s.quality})` : `Server ${index + 2}`}</span>
-                  <div class="play-btn">▶</div>
-                </a>
-              ` : `<div class="server-section"><span>No streaming link available</span></div>`}
-              ${s.download && isValidUrl(s.download) ? `
-                <a href="${s.download}" target="_blank" rel="noopener noreferrer" class="download-section" download aria-label="Download ${data.title} server ${index + 2}">
-                  <span>Download - ${s.quality ? `Server ${index + 2} (${s.quality})` : `Server ${index + 2}`}</span>
-                  <div class="download-btn">↓</div>
-                </a>
-              ` : `<div class="download-section"><span>No download link available</span></div>`}
-            `).join('')}
-          ` : data.type === "movie" ? `<p class="no-content">No servers available</p>` : ""}
-          ${data.type === "series" && sortedEpisodes.length ? `
-            <h4>Episodes</h4>
-            ${sortedEpisodes.map((e, index) => `
-              ${e.streaming && isValidUrl(e.streaming) ? `
-                <a href="${e.streaming}" target="_blank" rel="noopener noreferrer" class="server-section" aria-label="Stream ${data.title} episode ${e.episodeNumber || index + 1}">
-                  <span>Streaming - Episode ${e.episodeNumber || index + 1}${e.title ? ` - ${e.title}` : ''}</span>
-                  <div class="play-btn">▶</div>
-                </a>
-              ` : `<div class="server-section"><span>No streaming link available for Episode ${e.episodeNumber || index + 1}</span></div>`}
-              ${e.download && isValidUrl(e.download) ? `
-                <a href="${e.download}" target="_blank" rel="noopener noreferrer" class="download-section" download aria-label="Download ${data.title} episode ${e.episodeNumber || index + 1}">
-                  <span>Download - Episode ${e.episodeNumber || index + 1}${e.title ? ` - ${e.title}` : ''}</span>
-                  <div class="download-btn">↓</div>
-                </a>
-              ` : `<div class="download-section"><span>No download link available for Episode ${e.episodeNumber || index + 1}</span></div>`}
-            `).join('')}
-          ` : data.type === "series" ? `<p class="no-content">No episodes available</p>` : ""}
+          <button class="back-button" onclick="resetToHomepage()">Back to Home</button>
+          <div class="title">${data.title}</div>
+          ${isPremium ? '<div class="premium-badge">Premium</div>' : ''}
+          <div class="popularity">
+            Popularity: ${'★'.repeat(data.popularity || 0)}${'☆'.repeat(5 - (data.popularity || 0))}
+          </div>
+          <div class="details">
+            <div class="poster">
+              <img src="${data.poster || 'https://via.placeholder.com/120x180'}" alt="${data.title} Poster" />
+            </div>
+            <div class="info">
+              <div class="type">Type: <span>${data.type === "movie" ? "movie" : "series"}</span></div>
+              <div class="description">${data.description || "No description available"}</div>
+              <div class="last-updated">Last Updated: ${data.updatedAt ? new Date(data.updatedAt).toLocaleString("en-US", { timeZone: "Asia/Kolkata", hour12: true }) : currentDateTime}</div>
+            </div>
+          </div>
+          <div class="server-block">
+            ${data.type === "movie" && data.servers && Array.isArray(data.servers) && data.servers.length ? `
+              ${data.servers.map((s, index) => `
+                <div class="server" aria-label="Server ${index + 1} for ${data.title}">
+                  <span>Server ${index + 1} (${s.quality || 'HD'})</span>
+                  ${s.streaming && isValidUrl(s.streaming) ? `
+                    <a href="${s.streaming}" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="Stream ${data.title} Server ${index + 1}"><i class="fas fa-play"></i> Stream</a>
+                  ` : `<button class="stream-btn" disabled aria-label="Streaming unavailable"><i class="fas fa-play"></i> Stream</button>`}
+                  ${s.download && isValidUrl(s.download) ? `
+                    <a href="${s.download}" target="_blank" rel="noopener noreferrer" class="download-btn" download aria-label="Download ${data.title} Server ${index + 1}"><i class="fas fa-download"></i> Download</a>
+                  ` : `<button class="download-btn" disabled aria-label="Download unavailable"><i class="fas fa-download"></i> Download</button>`}
+                </div>
+              `).join('')}
+            ` : data.type === "movie" ? `<p class="no-content">No servers available</p>` : ""}
+            ${data.type === "series" && sortedEpisodes.length ? `
+              ${sortedEpisodes.map((e, index) => `
+                <div class="server" aria-label="Episode ${e.episodeNumber || index + 1} for ${data.title}">
+                  <span>Episode ${e.episodeNumber || index + 1}${e.title ? ` - ${e.title}` : ''}</span>
+                  ${e.streaming && isValidUrl(e.streaming) ? `
+                    <a href="${e.streaming}" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="Stream ${data.title} Episode ${e.episodeNumber || index + 1}"><i class="fas fa-play"></i> Stream</a>
+                  ` : `<button class="stream-btn" disabled aria-label="Streaming unavailable"><i class="fas fa-play"></i> Stream</button>`}
+                  ${e.download && isValidUrl(e.download) ? `
+                    <a href="${e.download}" target="_blank" rel="noopener noreferrer" class="download-btn" download aria-label="Download ${data.title} Episode ${e.episodeNumber || index + 1}"><i class="fas fa-download"></i> Download</a>
+                  ` : `<button class="download-btn" disabled aria-label="Download unavailable"><i class="fas fa-download"></i> Download</button>`}
+                </div>
+              `).join('')}
+            ` : data.type === "series" ? `<p class="no-content">No episodes available</p>` : ""}
+          </div>
         `;
-        detailsContainer.style.display = "block";
-        window.scrollTo({ top: detailsContainer.offsetTop - 40, behavior: 'smooth' });
-
+        document.getElementById("detailsModal").style.display = "flex";
         isDetailsView = true;
         history.pushState({ view: 'details', id: data.id }, '', `#details-${data.id}`);
-        console.log("Showing details for:", data.id, data.title);
+        console.log("Showing details modal for:", data.id, data.title);
       } catch (error) {
-        console.error("Error rendering details at 11:31 PM IST, Monday, September 08, 2025:", error);
+        console.error("Error rendering details at 06:55 PM IST, Saturday, October 04, 2025:", error);
         detailsContainer.innerHTML = '<p class="no-content">Error rendering content details. Please try again.</p>';
+        document.getElementById("detailsModal").style.display = "flex";
       }
     }
 
-    function showMore(contentId) {
-      const container = document.getElementById(contentId);
-      const button = container.previousElementSibling.previousElementSibling;
-      button.classList.add('loading');
-      let category = contentId.replace('Content', '');
-      const categoryMap = {
-        'bollywood': 'Bollywood',
-        'hollywood': 'Hollywood',
-        'south': 'South',
-        'webseries': 'Web Series',
-        'adult': 'Adult Content',
-        'anime': 'Anime',
-        'tvserials': 'TV Serials'
-      };
-      category = categoryMap[contentId.toLowerCase().replace('content', '')] || category;
-      const allItems = allContent.filter(item => item.category === category && item.title);
-      console.log(`Showing ${allItems.length} items for category: ${category} at 11:31 PM IST, Monday, September 08, 2025`, allItems);
-      setTimeout(() => {
-        if (allItems.length > 0) {
-          container.classList.add('full-view');
-          container.innerHTML = allItems.map(item => `
-            <div class="card" onclick="showDetailsById('${item.id}')" aria-label="${item.title}">
-              <div class="quality-badge">${item.quality || 'HD'}</div>
-              <img src="${item.poster || 'https://via.placeholder.com/350x270'}" alt="${item.title} poster" />
-              <div class="card-title">${item.title}</div>
-            </div>`).join('');
-        } else {
-          container.innerHTML = '<p class="no-content">No content available for this category</p>';
-        }
-        button.classList.remove('loading');
-        isDetailsView = true;
-        history.pushState({ view: 'more', category }, '', `#more-${category}`);
-        window.scrollTo({ top: container.parentElement.offsetTop - 40, behavior: 'smooth' });
-      }, 500);
-    }
-
     window.addEventListener('popstate', (event) => {
-      console.log("Back button pressed at 11:31 PM IST, Monday, September 08, 2025", event.state);
+      console.log("Back button pressed at 06:55 PM IST, Saturday, October 04, 2025", event.state);
       if (isDetailsView || (event.state && event.state.view !== 'home')) {
         resetToHomepage();
       }
     });
 
     window.onload = () => {
-      console.log("Loading all content at 11:31 PM IST, Monday, September 08, 2025...");
+      console.log("Loading all content at 06:55 PM IST, Saturday, October 04, 2025...");
       history.replaceState({ view: 'home' }, '', '');
       loadAllContent();
     };
